@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <title>Geek Store</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__contenedor">
+            <h1 class="header__texto">G E E K S T O R E</h1>
+        </div>
+        <div class="contenedor__carrito">
+            <button id="toggle-carrito" class="header__carrito" aria-label="Abrir carrito">
+                🛒 <span class="carrito-contador" id="carrito-contador" data-carrito-contador>0</span>
+            </button>
+        </div>
+        
+    </header>
+
+    <main class="contenedor">
+        <section class="productos">
+            <div>
+                <h1 class="productos__titulo">MIS PRODUCTOS:</h1>
+            </div>
+            <div class="buscador">
+                <i class="fas fa-search"></i>
+                <input type="text" id="buscar-producto" placeholder="Buscar productos..." />
+            </div>
+            <div class="productos__listado" data-lista>
+                
+            </div>
+        </section>
+        <section class="formulario">
+            <h1 class="formulario__titulo">AGREGAR PRODUCTO:</h1>
+            <input class="formulario__input" type="text" placeholder="nombre..." required data-nombre>
+            <input class="formulario__input" type="number" placeholder="precio..." required data-precio>
+            <input class="formulario__input" type="url" placeholder="imagen..." required data-imagen>
+            <div class="botones">
+                <button class="btn__enviar" data-enviar>Enviar</button>
+                <button class="btn__limpiar" data-limpiar>Limpiar</button>
+            </div>
+        </section>
+
+        <aside class="carrito oculto" data-carrito>
+            <h2 class="carrito__titulo">Carrito de Compras</h2>
+            <p class="carrito__linea"></p>
+            <ul class="carrito__lista" data-carrito-lista></ul>
+            <p class="carrito__total">Total: $<span data-carrito-total>0.00</span></p>
+            <button class="carrito__limpiar" data-limpiar-carrito>Limpiar Carrito</button>
+        </aside>
+
+        <!-- Modal de Edición (Formulario) -->
+        <div id="modal-editar" class="modal__actualizar">
+            <div class="modal__contenido">
+                <h2>Actualizar Producto</h2>
+                <form id="form-editar-producto">
+                    <input class="formulario__input" type="text" placeholder="nombre..." required data-nombre2>
+                    <input class="formulario__input" type="number" placeholder="precio..." required data-precio2>
+                    <input class="formulario__input" type="url" placeholder="imagen..." required data-imagen2>
+
+                    <div class="botones__actualizar">
+                        <button class="btn__guardar" type="submit" data-guardar-cambios>Guardar</button>
+                        <button class="btn__cancelar" type="button" id="cerrar-modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="footer__contenido">
+            <h1 class="footer__titulo">GEEKSTORE</h1>
+        </div>
+        <p class="footer__p1">DESARROLLADO POR MARTIN VELASQUEZ</p>
+        <p>
+            <a class="link__repositorio" href="https://github.com/xandervel98">Repositorio en Github</a>
+        </p>
+        <div class="footer__redes">
+            <p>Redes:</p>
+            <a class="footer__linkedin" href="https://www.linkedin.com/in/mvelasquezr98/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            <a class="footer__github" href="https://github.com/xandervel98" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+        </div>
+        
+    </footer>
+
+    <script src="./js/mostrarProductos.js" type="module"></script>
+    <script src="./js/crearProducto.js" type="module"></script>
+    <script src="./js/actualizarProducto.js" type="module"></script>
+    <script src="./js/buscarProducto.js" type="module"></script>
+    <script src="./js/carrito.js" type="module"></script>
+    <script src="./js/carritoToggle.js" type="module"></script>
+</body>
+</html>
